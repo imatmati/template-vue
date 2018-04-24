@@ -68,7 +68,7 @@ module.exports = {
           short: 'runtime',
         },
       ],
-    },
+    }/*,
     router: {
       when: 'isNotTest',
       type: 'confirm',
@@ -127,7 +127,7 @@ module.exports = {
           short: 'noTest',
         },
       ],
-    },
+    }*/,
     e2e: {
       when: 'isNotTest',
       type: 'confirm',
@@ -140,14 +140,9 @@ module.exports = {
         'Should we run `npm install` for you after the project has been created? (recommended)',
       choices: [
         {
-          name: 'Yes, use NPM',
+          name: 'Yes',
           value: 'npm',
           short: 'npm',
-        },
-        {
-          name: 'Yes, use Yarn',
-          value: 'yarn',
-          short: 'yarn',
         },
         {
           name: 'No, I will handle that myself',
@@ -158,18 +153,7 @@ module.exports = {
     },
   },
   filters: {
-    '.eslintrc.js': 'lint',
-    '.eslintignore': 'lint',
-    'config/test.env.js': 'unit || e2e',
-    'build/webpack.test.conf.js': "unit && runner === 'karma'",
-    'test/unit/**/*': 'unit',
-    'test/unit/index.js': "unit && runner === 'karma'",
-    'test/unit/jest.conf.js': "unit && runner === 'jest'",
-    'test/unit/karma.conf.js': "unit && runner === 'karma'",
-    'test/unit/specs/index.js': "unit && runner === 'karma'",
-    'test/unit/setup.js': "unit && runner === 'jest'",
-    'test/e2e/**/*': 'e2e',
-    'src/router/**/*': 'router',
+    
   },
   complete: function(data, { chalk }) {
     const green = chalk.green
